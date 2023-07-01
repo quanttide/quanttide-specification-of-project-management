@@ -1,0 +1,9 @@
+format: jb-book
+root: index.md
+chapters:
+  - file: projects/README.md
+    sections: 
+      - file: projects/project.md
+      - file: projects/relation.md
+      - file: projects/hierarchy.md
+  - file: matters/README.md
