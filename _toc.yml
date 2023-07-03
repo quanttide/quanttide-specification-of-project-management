@@ -10,3 +10,4 @@ chapters:
   - file: matters/README.md
     sections:
       - file: matters/matter.md
+  - file: CHANGELOG.md

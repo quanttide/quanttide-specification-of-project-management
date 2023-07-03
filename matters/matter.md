@@ -15,6 +15,8 @@
 `````{tab-set}
 ````{tab-item} Django
 ```{code-block} python
+from django.db import models
+
 class MatterTypeChoices(models.TextChoices):
     """
     事项类型选项

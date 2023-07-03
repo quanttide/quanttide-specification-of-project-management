@@ -25,8 +25,10 @@
 - `project_portfolio`: 项目组合
 
 `````{tab-set}
-````{tab-item}
+````{tab-item} Django
 ```{code-block} python
+from django.db import models
+
 class ProjectTypeChoices(models.TextChoices):
     """
     项目类型选项
@@ -46,8 +48,10 @@ class ProjectTypeChoices(models.TextChoices):
 - `urgent`: 紧急
 
 `````{tab-set}
-````{tab-item}
+````{tab-item} Django
 ```{code-block} python
+from django.db import models
+
 class PriorityChoices(models.IntegerChoices):
     """
     优先级选项
@@ -75,8 +79,10 @@ class PriorityChoices(models.IntegerChoices):
 - `cancelled`: 已取消。该状态表示项目或事项已经取消，可能是因为它不再需要实施，或者因为有更好的替代方案。
 
 `````{tab-set}
-````{tab-item}
+````{tab-item} Django
 ```{code-block} python
+from django.db import models
+
 class StatusChoices(models.TextChoices):
     """
     状态选项
