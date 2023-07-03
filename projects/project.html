@@ -162,6 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../matters/matter.html">事项领域模型<code class="docutils literal notranslate"><span class="pre">Matter</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
 </ul>
 
     </div>
@@ -356,6 +357,21 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">project_portfolio</span></code>: 项目组合</p></li>
 </ul>
 <div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Django</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">ProjectTypeChoices</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    项目类型选项</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;项目&#39;</span>
+    <span class="n">program</span> <span class="o">=</span> <span class="s1">&#39;program&#39;</span><span class="p">,</span> <span class="s1">&#39;项目集&#39;</span>
+    <span class="n">project_portfolio</span> <span class="o">=</span> <span class="s1">&#39;project_portfolio&#39;</span><span class="p">,</span> <span class="s1">&#39;项目组合&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id4">
@@ -367,6 +383,24 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">urgent</span></code>: 紧急</p></li>
 </ul>
 <div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Django</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">PriorityChoices</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">IntegerChoices</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    优先级选项</span>
+
+<span class="sd">    类似于logging模块的level选项的设计风格。使用形容词描述。</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">LOW</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;低&#39;</span>
+    <span class="n">MIDDLE</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;中&#39;</span>
+    <span class="n">HIGH</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="s1">&#39;高&#39;</span>
+    <span class="n">URGENT</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="s1">&#39;紧急&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="id5">
@@ -383,6 +417,31 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">cancelled</span></code>: 已取消。该状态表示项目或事项已经取消，可能是因为它不再需要实施，或者因为有更好的替代方案。</p></li>
 </ul>
 <div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+Django</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">StatusChoices</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    状态选项</span>
+
+<span class="sd">    遵循项目和事项的生命周期的定义，使用形容词或动名词描述。</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">DRAFT</span> <span class="o">=</span> <span class="s1">&#39;drafting&#39;</span><span class="p">,</span> <span class="s1">&#39;起草中&#39;</span>
+    <span class="n">EVALUATION</span> <span class="o">=</span> <span class="s1">&#39;evaluating&#39;</span><span class="p">,</span> <span class="s1">&#39;评估中&#39;</span>
+    <span class="n">AWAITING</span> <span class="o">=</span> <span class="s1">&#39;awaiting&#39;</span><span class="p">,</span> <span class="s1">&#39;等待开始&#39;</span>
+    <span class="n">IN_PROGRESS</span> <span class="o">=</span> <span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s1">&#39;进行中&#39;</span>
+    <span class="n">DELAYED</span> <span class="o">=</span> <span class="s1">&#39;delayed&#39;</span><span class="p">,</span> <span class="s1">&#39;已延迟&#39;</span>
+    <span class="n">PAUSED</span> <span class="o">=</span> <span class="s1">&#39;paused&#39;</span><span class="p">,</span> <span class="s1">&#39;已暂停&#39;</span>
+    <span class="n">REVIEWING</span> <span class="o">=</span> <span class="s1">&#39;reviewing&#39;</span><span class="p">,</span> <span class="s1">&#39;评审中&#39;</span>
+    <span class="n">DELIVERING</span> <span class="o">=</span> <span class="s1">&#39;delivering&#39;</span><span class="p">,</span> <span class="s1">&#39;交付中&#39;</span>
+    <span class="n">SUMMARIZING</span> <span class="o">=</span> <span class="s1">&#39;summarizing&#39;</span><span class="p">,</span> <span class="s1">&#39;复盘中&#39;</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span><span class="p">,</span> <span class="s1">&#39;已完成&#39;</span>
+    <span class="n">CANCELLED</span> <span class="o">=</span> <span class="s1">&#39;cancelled&#39;</span><span class="p">,</span> <span class="s1">&#39;已取消&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
