@@ -1,3 +1,4 @@
+# publish JupyterBook project to GitHub Pages
 name: jupyterbook-publish
 
 # Only run this when the master branch changes
