@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>项目层级模型ProjectHierarchy &#8212; 量潮项目管理标准</title>
+    <title>项目层级 &#8212; 量潮项目管理标准</title>
   
   
   
@@ -64,8 +64,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'projects/hierarchy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="事项" href="../matters/README.html" />
-    <link rel="prev" title="项目关系模型ProjectRelation" href="relation.html" />
+    <link rel="next" title="项目生命周期" href="lifecycle.html" />
+    <link rel="prev" title="项目关联关系" href="relation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,9 +152,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">项目</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="project.html">项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="relation.html">项目关系模型<code class="docutils literal notranslate"><span class="pre">ProjectRelation</span></code></a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">项目层级模型<code class="docutils literal notranslate"><span class="pre">ProjectHierarchy</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html">项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relation.html">项目关联关系</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">项目层级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">项目生命周期</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../matters/README.html">事项</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -297,7 +298,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>项目层级模型ProjectHierarchy</h1>
+    <h1>项目层级</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -307,7 +308,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy">层级字段<code class="docutils literal notranslate"><span class="pre">hierarchy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projecthierarchy">项目层级模型<code class="docutils literal notranslate"><span class="pre">ProjectHierarchy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字段</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy">层级字段<code class="docutils literal notranslate"><span class="pre">hierarchy</span></code></a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -319,14 +324,20 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="projecthierarchy">
-<h1>项目层级模型<code class="docutils literal notranslate"><span class="pre">ProjectHierarchy</span></code><a class="headerlink" href="#projecthierarchy" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>项目层级<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="projecthierarchy">
+<h2>项目层级模型<code class="docutils literal notranslate"><span class="pre">ProjectHierarchy</span></code><a class="headerlink" href="#projecthierarchy" title="Permalink to this heading">#</a></h2>
 <p>项目层级用来表示项目集和项目组合的层次关系，以方便做更精准的层次关系可视化。</p>
 <p>独立定义项目层级模型，主要是考虑项目层级的计算和冲突处理较为复杂，也可能需要区分项目集和项目组合的层级，因此需要单独处理，或者定义为相对某个根项目的相对层级。</p>
+</section>
+<section id="id2">
+<h2>字段<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="hierarchy">
-<h2>层级字段<code class="docutils literal notranslate"><span class="pre">hierarchy</span></code><a class="headerlink" href="#hierarchy" title="Permalink to this heading">#</a></h2>
+<h3>层级字段<code class="docutils literal notranslate"><span class="pre">hierarchy</span></code><a class="headerlink" href="#hierarchy" title="Permalink to this heading">#</a></h3>
 <p>正整数类型。</p>
 <p>数字越小，层级越高。</p>
+</section>
 </section>
 </section>
 
@@ -367,15 +378,15 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">项目关系模型<code class="docutils literal notranslate"><span class="pre">ProjectRelation</span></code></p>
+        <p class="prev-next-title">项目关联关系</p>
       </div>
     </a>
     <a class="right-next"
-       href="../matters/README.html"
+       href="lifecycle.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">事项</p>
+        <p class="prev-next-title">项目生命周期</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -397,7 +408,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy">层级字段<code class="docutils literal notranslate"><span class="pre">hierarchy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projecthierarchy">项目层级模型<code class="docutils literal notranslate"><span class="pre">ProjectHierarchy</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字段</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hierarchy">层级字段<code class="docutils literal notranslate"><span class="pre">hierarchy</span></code></a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

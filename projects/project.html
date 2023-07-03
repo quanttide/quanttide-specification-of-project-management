@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>项目模型Project &#8212; 量潮项目管理标准</title>
+    <title>项目 &#8212; 量潮项目管理标准</title>
   
   
   
@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'projects/project';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="项目关系模型ProjectRelation" href="relation.html" />
+    <link rel="next" title="项目关联关系" href="relation.html" />
     <link rel="prev" title="项目" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -152,9 +152,10 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">项目</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="relation.html">项目关系模型<code class="docutils literal notranslate"><span class="pre">ProjectRelation</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="hierarchy.html">项目层级模型<code class="docutils literal notranslate"><span class="pre">ProjectHierarchy</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">项目</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relation.html">项目关联关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hierarchy.html">项目层级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lifecycle.html">项目生命周期</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../matters/README.html">事项</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -297,7 +298,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>项目模型Project</h1>
+    <h1>项目</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -307,10 +308,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">字段</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">类型选项</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">优先级选项</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">状态选项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project">项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字段</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">类型选项</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">优先级选项</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">状态选项</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api">REST API</a></li>
@@ -325,13 +327,16 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="project">
-<h1>项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code><a class="headerlink" href="#project" title="Permalink to this heading">#</a></h1>
-<p>定义“项目集”和“项目组合”为“项目”的子类。
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>项目<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="project">
+<h2>项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code><a class="headerlink" href="#project" title="Permalink to this heading">#</a></h2>
+<p>定义“项目集<code class="docutils literal notranslate"><span class="pre">Program</span></code>”和“项目组合<code class="docutils literal notranslate"><span class="pre">ProjecPortfolio</span></code>”为“项目<code class="docutils literal notranslate"><span class="pre">Project</span></code>”的子类。
 在项目管理理论中，“项目”有狭义和广义两种表述方式，狭义的项目可以是项目集和项目组合的组成部分，广义的项目是他们的总称。
 我们这里采纳了广义的表述，并且让项目集和项目组合拥有项目的绝大多数特性，以支持更复杂的项目边界划分策略。</p>
-<section id="id1">
-<h2>字段<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="id2">
+<h2>字段<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
@@ -343,8 +348,8 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">status</span></code>: 状态</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">priority</span></code>: 优先级</p></li>
 </ul>
-<section id="id2">
-<h3>类型选项<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<section id="id3">
+<h3>类型选项<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: 默认</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">program</span></code>: 项目集</p></li>
@@ -353,8 +358,8 @@ document.write(`
 <div class="sd-tab-set docutils">
 </div>
 </section>
-<section id="id3">
-<h3>优先级选项<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<section id="id4">
+<h3>优先级选项<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">low</span></code>: 低</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">middle</span></code>: 中</p></li>
@@ -364,8 +369,8 @@ document.write(`
 <div class="sd-tab-set docutils">
 </div>
 </section>
-<section id="id4">
-<h3>状态选项<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<section id="id5">
+<h3>状态选项<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">drafting</span></code>: 起草中。该状态表示项目或事项处于起草阶段，即正在制定计划和准备工作。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">evaluating</span></code>: 评估中。该状态表示项目或事项正在进行评估，以确定其可行性和实施方案。</p></li>
@@ -435,7 +440,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">项目关系模型<code class="docutils literal notranslate"><span class="pre">ProjectRelation</span></code></p>
+        <p class="prev-next-title">项目关联关系</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -457,10 +462,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">字段</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">类型选项</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">优先级选项</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">状态选项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project">项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">字段</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">类型选项</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">优先级选项</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">状态选项</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rest-api">REST API</a></li>
