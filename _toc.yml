@@ -7,3 +7,5 @@ chapters:
       - file: projects/relation.md
       - file: projects/hierarchy.md
   - file: matters/README.md
+    sections:
+      - file: matters/matter.md
