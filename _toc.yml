@@ -3,11 +3,11 @@ root: index.md
 chapters:
   - file: projects/README.md
     sections: 
-      - file: projects/project.md
       - file: projects/relation.md
       - file: projects/hierarchy.md
       - file: projects/lifecycle.md
+      - file: projects/priority.md
   - file: matters/README.md
     sections:
-      - file: matters/matter.md
+      - file: matters/type.md
   - file: CHANGELOG.md
