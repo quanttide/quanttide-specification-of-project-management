@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'projects/lifecycle';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="事项" href="../matters/README.html" />
+    <link rel="next" title="项目优先级" href="priority.html" />
     <link rel="prev" title="项目层级" href="hierarchy.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -152,14 +152,14 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">项目</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="project.html">项目</a></li>
-<li class="toctree-l2"><a class="reference internal" href="relation.html">项目关联关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relation.html">项目类型和关联关系</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hierarchy.html">项目层级</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">项目生命周期</a></li>
+<li class="toctree-l2"><a class="reference internal" href="priority.html">项目优先级</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../matters/README.html">事项</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../matters/matter.html">事项领域模型<code class="docutils literal notranslate"><span class="pre">Matter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../matters/type.html">事项类型</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
@@ -286,7 +286,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -302,6 +304,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">项目状态选项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">项目生命周期</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -313,8 +324,54 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>项目生命周期<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<section id="id2">
+<h2>项目状态选项<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">drafting</span></code>: 起草中。该状态表示项目或事项处于起草阶段，即正在制定计划和准备工作。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">evaluating</span></code>: 评估中。该状态表示项目或事项正在进行评估，以确定其可行性和实施方案。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">awaiting</span></code>: 等待开始。该状态表示项目或事项已经准备就绪，但尚未开始实施，可能是因为需要等待某些资源或条件。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in_progress</span></code>: 进行中。该状态表示项目或事项正在进行中，即正在实施并按计划推进。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delayed</span></code>: 已延迟。该状态表示项目或事项因某种原因而延迟，可能需要重新制定计划或采取其他措施来弥补延迟。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">paused</span></code>: 已暂停。该状态表示项目或事项已经暂停，可能是因为需要等待某些资源或条件，或者因为需要重新评估实施方案。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reviewing</span></code>: 评审中。该状态表示项目或事项正在接受评审，以检查其进展和结果，可能需要做出一些调整或修正。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">delivering</span></code>: 交付中。该状态表示项目或事项正在执行交付阶段，正在进行实施或者交付相关的工作。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">summarizing</span></code>: 复盘中。该状态表示项目或事项已经完成交付，正在进行复盘或者总结工作，以便进一步提高流程和绩效。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">completed</span></code>: 已完成。该状态表示项目或事项已经完成，达到预期的目标和成果。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cancelled</span></code>: 已取消。该状态表示项目或事项已经取消，可能是因为它不再需要实施，或者因为有更好的替代方案。</p></li>
+</ul>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Django</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">StatusChoices</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    状态选项</span>
+
+<span class="sd">    遵循项目和事项的生命周期的定义，使用形容词或动名词描述。</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">DRAFT</span> <span class="o">=</span> <span class="s1">&#39;drafting&#39;</span><span class="p">,</span> <span class="s1">&#39;起草中&#39;</span>
+    <span class="n">EVALUATION</span> <span class="o">=</span> <span class="s1">&#39;evaluating&#39;</span><span class="p">,</span> <span class="s1">&#39;评估中&#39;</span>
+    <span class="n">AWAITING</span> <span class="o">=</span> <span class="s1">&#39;awaiting&#39;</span><span class="p">,</span> <span class="s1">&#39;等待开始&#39;</span>
+    <span class="n">IN_PROGRESS</span> <span class="o">=</span> <span class="s1">&#39;in_progress&#39;</span><span class="p">,</span> <span class="s1">&#39;进行中&#39;</span>
+    <span class="n">DELAYED</span> <span class="o">=</span> <span class="s1">&#39;delayed&#39;</span><span class="p">,</span> <span class="s1">&#39;已延迟&#39;</span>
+    <span class="n">PAUSED</span> <span class="o">=</span> <span class="s1">&#39;paused&#39;</span><span class="p">,</span> <span class="s1">&#39;已暂停&#39;</span>
+    <span class="n">REVIEWING</span> <span class="o">=</span> <span class="s1">&#39;reviewing&#39;</span><span class="p">,</span> <span class="s1">&#39;评审中&#39;</span>
+    <span class="n">DELIVERING</span> <span class="o">=</span> <span class="s1">&#39;delivering&#39;</span><span class="p">,</span> <span class="s1">&#39;交付中&#39;</span>
+    <span class="n">SUMMARIZING</span> <span class="o">=</span> <span class="s1">&#39;summarizing&#39;</span><span class="p">,</span> <span class="s1">&#39;复盘中&#39;</span>
+    <span class="n">COMPLETED</span> <span class="o">=</span> <span class="s1">&#39;completed&#39;</span><span class="p">,</span> <span class="s1">&#39;已完成&#39;</span>
+    <span class="n">CANCELLED</span> <span class="o">=</span> <span class="s1">&#39;cancelled&#39;</span><span class="p">,</span> <span class="s1">&#39;已取消&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>项目生命周期<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p><img alt="项目生命周期" src="../_images/lifecycle.png" /></p>
 <p>使用不同的颜色进行分类、使用箭头来表示一般的变化方向。</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -358,11 +415,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../matters/README.html"
+       href="priority.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">事项</p>
+        <p class="prev-next-title">项目优先级</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -375,6 +432,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">项目状态选项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">项目生命周期</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
