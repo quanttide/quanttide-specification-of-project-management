@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'projects/README';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="项目类型和关联关系" href="relation.html" />
+    <link rel="next" title="项目类型" href="type.html" />
     <link rel="prev" title="简介" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -152,14 +152,17 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">项目</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="relation.html">项目类型和关联关系</a></li>
+<li class="toctree-l2"><a class="reference internal" href="type.html">项目类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="relation.html">项目关联关系</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hierarchy.html">项目层级</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lifecycle.html">项目生命周期</a></li>
 <li class="toctree-l2"><a class="reference internal" href="priority.html">项目优先级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user.html">项目成员</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../matters/README.html">事项</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../matters/type.html">事项类型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../matters/user.html">事项成员</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
@@ -327,11 +330,6 @@ document.write(`
 <section id="project">
 <h2>项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code><a class="headerlink" href="#project" title="Permalink to this heading">#</a></h2>
 <p>项目子领域的基本模型为项目模型<code class="docutils literal notranslate"><span class="pre">Project</span></code>。</p>
-<p>REST API为：</p>
-<ul class="simple">
-<li><p>list: <code class="docutils literal notranslate"><span class="pre">/projects</span></code></p></li>
-<li><p>detail: <code class="docutils literal notranslate"><span class="pre">/projects/&lt;name&gt;</span></code></p></li>
-</ul>
 <p>包括如下字段，其中未说明为标准字段：</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
@@ -340,10 +338,15 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">description</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">created_at</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">updated_at</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: 类型。定义见<a class="reference internal" href="relation.html"><span class="doc std std-doc">项目类型和关联关系</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: 类型。定义见<a class="reference internal" href="type.html"><span class="doc std std-doc">项目类型</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">hierarchy</span></code>: 层级。定义见<a class="reference internal" href="hierarchy.html"><span class="doc std std-doc">项目层级</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">status</span></code>: 状态。定义见<a class="reference internal" href="lifecycle.html"><span class="doc std std-doc">项目生命周期</span></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">priority</span></code>: 优先级。定义见<a class="reference internal" href="priority.html"><span class="doc std std-doc">项目优先级</span></a></p></li>
+</ul>
+<p>REST API为：</p>
+<ul class="simple">
+<li><p>list: <code class="docutils literal notranslate"><span class="pre">/projects</span></code></p></li>
+<li><p>detail: <code class="docutils literal notranslate"><span class="pre">/projects/&lt;name&gt;</span></code></p></li>
 </ul>
 </section>
 <div class="toctree-wrapper compound">
@@ -391,11 +394,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="relation.html"
+       href="type.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">项目类型和关联关系</p>
+        <p class="prev-next-title">项目类型</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>项目层级 &#8212; 量潮项目管理标准</title>
+    <title>项目成员 &#8212; 量潮项目管理标准</title>
   
   
   
@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/hierarchy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'projects/user';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="项目生命周期" href="lifecycle.html" />
-    <link rel="prev" title="项目关联关系" href="relation.html" />
+    <link rel="next" title="事项" href="../matters/README.html" />
+    <link rel="prev" title="项目优先级" href="priority.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -154,10 +154,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">项目</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="type.html">项目类型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="relation.html">项目关联关系</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">项目层级</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hierarchy.html">项目层级</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lifecycle.html">项目生命周期</a></li>
 <li class="toctree-l2"><a class="reference internal" href="priority.html">项目优先级</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user.html">项目成员</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">项目成员</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../matters/README.html">事项</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -220,7 +220,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/projects/hierarchy.md" target="_blank"
+      <li><a href="../_sources/projects/user.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +302,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>项目层级</h1>
+    <h1>项目成员</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -312,8 +312,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">层级字段</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">TODO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">背景</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectuserrelation">项目成员关联模型<code class="docutils literal notranslate"><span class="pre">ProjectUserRelation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">属性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">关联关系</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">示例代码</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectuserrole">项目成员角色模型<code class="docutils literal notranslate"><span class="pre">ProjectUserRole</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">属性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">示例代码</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -326,16 +336,97 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>项目层级<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<p>项目层级用来表示项目集和项目组合的层次关系，以方便做更精准的层次关系可视化。</p>
+<h1>项目成员<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
-<h2>层级字段<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<p>非负整数类型。</p>
-<p>数字越小，层级越高；数字0代表根层级。</p>
+<h2>背景<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>描述项目的负责人及其所属的负责组。</p>
+<ul class="simple">
+<li><p>负责人 Owner 代表 负责部委。通常是项目管理权限。</p></li>
+<li><p>复核人 Reviewer 代表 复核部委。通常是汇报链条的上级，或者同级的副手，少部分情况可能是辅助的下级。通常是项目管理权限。</p></li>
+<li><p>参与者 Member 来自 参与部委。通常是内部维护者。通常拥有读写权限。</p></li>
+<li><p>关注者 Observer 来自 关注部委。通常是内部用户，比如文档的读者。通常只有读权限。</p></li>
+</ul>
 </section>
-<section id="todo">
-<h2>TODO<a class="headerlink" href="#todo" title="Permalink to this heading">#</a></h2>
-<p>独立定义项目层级模型，主要是考虑项目层级的计算和冲突处理较为复杂，也可能需要区分项目集和项目组合的层级，因此需要单独处理，或者定义为相对某个根项目的相对层级。</p>
+<section id="projectuserrelation">
+<h2>项目成员关联模型<code class="docutils literal notranslate"><span class="pre">ProjectUserRelation</span></code><a class="headerlink" href="#projectuserrelation" title="Permalink to this heading">#</a></h2>
+<p>项目成员关联模型 ProjectUserRelation 用于描述项目参与者之间的关系。该模型定义了项目成员及其在项目中的角色和权限。</p>
+<section id="id3">
+<h3>属性<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: 关联模型的唯一标识符。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">created_at</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">updated_at</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">project_id</span></code>: 项目的唯一标识符，用于指示该关联属于哪个项目。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">user_id</span></code>: 用户的唯一标识符，用于指示该关联属于哪个用户。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group_id</span></code>: 组织用户组的唯一标识符，用来指示该关联用户代表哪个组织用户组。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">role</span></code>: 项目成员的角色。可以是固定预定义的角色，也可以根据具体项目的需要进行自定义。</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>关联关系<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">project</span></code>: 外键关联。该关联所属的项目。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">user</span></code>: 外键关联。该关联所属的用户。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">group</span></code>: 外键关联。该关联所属的组织用户组。</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3>示例代码<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Django</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span> <span class="k">as</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django_quanttide</span> <span class="kn">import</span> <span class="n">models</span> <span class="k">as</span> <span class="n">quanttide_models</span>
+<span class="c1"># 补充数据模型导入。i.e.</span>
+<span class="c1"># from &lt;&gt; import Project, User, ProjectUserRole</span>
+
+<span class="k">class</span> <span class="nc">ProjectUserRelation</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">quanttide_models</span><span class="o">.</span><span class="n">CreatedAt</span><span class="p">()</span>
+    <span class="n">updated_at</span> <span class="o">=</span> <span class="n">quanttide_models</span><span class="o">.</span><span class="n">UpdatedAt</span><span class="p">()</span>
+    <span class="n">project</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">Project</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;关联项目&#39;</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;关联用户&#39;</span><span class="p">)</span>
+    <span class="n">group</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">OrganizationUserGroup</span><span class="p">,</span> <span class="n">null</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;关联组织用户组&#39;</span><span class="p">)</span>
+    <span class="n">role</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">ProjectUserRole</span><span class="p">,</span> <span class="n">on_delete</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">SET_NULL</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s1">&#39;关联角色&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="projectuserrole">
+<h2>项目成员角色模型<code class="docutils literal notranslate"><span class="pre">ProjectUserRole</span></code><a class="headerlink" href="#projectuserrole" title="Permalink to this heading">#</a></h2>
+<p>定义项目中可供选择的角色选项。该模型包含了项目成员在项目中可能担任的各种角色，以及每个角色可能具备的权限和责任。</p>
+<section id="id6">
+<h3>属性<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: 角色模型的唯一标识符。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">created_at</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">updated_at</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: 角色的标识。例如<code class="docutils literal notranslate"><span class="pre">owner</span></code>、<code class="docutils literal notranslate"><span class="pre">reviewer</span></code>、<code class="docutils literal notranslate"><span class="pre">member</span></code>、<code class="docutils literal notranslate"><span class="pre">observer</span></code>等。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verbose_name</span></code>: 角色的名称。例如”负责人”、”复核人”、”参与者”、”关注者”等。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">description</span></code>: 角色的描述，提供关于该角色职责和权限的详细信息。</p></li>
+</ul>
+</section>
+<section id="id7">
+<h3>示例代码<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-1" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+Django</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_quanttide</span> <span class="kn">import</span> <span class="n">models</span>
+
+<span class="k">class</span> <span class="nc">ProjectUserRole</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">NameField</span><span class="p">()</span>
+    <span class="n">created_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CreatedAt</span><span class="p">()</span>
+    <span class="n">updated_at</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">UpdatedAt</span><span class="p">()</span>
+    <span class="n">verbose_name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">VerboseNameField</span><span class="p">()</span>
+    <span class="n">description</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">DescriptionField</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -371,20 +462,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="relation.html"
+       href="priority.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">项目关联关系</p>
+        <p class="prev-next-title">项目优先级</p>
       </div>
     </a>
     <a class="right-next"
-       href="lifecycle.html"
+       href="../matters/README.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">项目生命周期</p>
+        <p class="prev-next-title">事项</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -406,8 +497,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">层级字段</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#todo">TODO</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">背景</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectuserrelation">项目成员关联模型<code class="docutils literal notranslate"><span class="pre">ProjectUserRelation</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">属性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">关联关系</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">示例代码</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#projectuserrole">项目成员角色模型<code class="docutils literal notranslate"><span class="pre">ProjectUserRole</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">属性</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">示例代码</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
