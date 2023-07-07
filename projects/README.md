@@ -6,11 +6,6 @@
 
 项目子领域的基本模型为项目模型`Project`。
 
-REST API为：
-
-- list: `/projects`
-- detail: `/projects/<name>`
-
 包括如下字段，其中未说明为标准字段：
 
 - `id`
@@ -19,7 +14,12 @@ REST API为：
 - `description`
 - `created_at`
 - `updated_at`
-- `type`: 类型。定义见[项目类型和关联关系](./relation.md)
+- `type`: 类型。定义见[项目类型](./type.md)
 - `hierarchy`: 层级。定义见[项目层级](./hierarchy.md)
 - `status`: 状态。定义见[项目生命周期](./lifecycle.md)
 - `priority`: 优先级。定义见[项目优先级](./priority.md)
+
+REST API为：
+
+- list: `/projects`
+- detail: `/projects/<name>`
