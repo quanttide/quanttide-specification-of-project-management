@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>事项类型 &#8212; 量潮项目管理标准</title>
+    <title>领域模型 &#8212; 量潮项目管理标准</title>
   
   
   
@@ -61,10 +61,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'matters/type';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'matters/domain_models';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="事项成员" href="user.html" />
+    <link rel="next" title="领域事件" href="domain_events.html" />
     <link rel="prev" title="事项" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -146,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    简介
+                    引言
                 </a>
             </li>
         </ul>
@@ -161,8 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">事项</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">事项类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user.html">事项成员</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">领域模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domain_events.html">领域事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoints.html">API实现</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
@@ -220,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/matters/type.md" target="_blank"
+      <li><a href="../_sources/matters/domain_models.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -302,7 +303,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>事项类型</h1>
+    <h1>领域模型</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -312,7 +313,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">类型选项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">事项类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">事项成员</a></li>
 </ul>
             </nav>
         </div>
@@ -325,9 +327,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>事项类型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>领域模型<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>事项领域模型<code class="docutils literal notranslate"><span class="pre">Matter</span></code></p>
+<p>包括字段如下，未说明字段为标准字段：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: 类型</p></li>
+</ul>
 <section id="id2">
-<h2>类型选项<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>事项类型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: 事项。该类型表示一般的事项或任务，通常是项目中最基本的单位，可以是某项工作、某个功能点或某个问题等。</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">millstone</span></code>: 里程碑。该类型表示项目中的重要节点或阶段，通常与项目计划和时间表密切相关，用于标识项目的进展和里程碑。</p></li>
@@ -356,6 +365,16 @@ Django</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
+</section>
+<section id="id3">
+<h2>事项成员<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>负责人<code class="docutils literal notranslate"><span class="pre">Owner</span></code></p></li>
+<li><p>复核人<code class="docutils literal notranslate"><span class="pre">Reviewer</span></code></p></li>
+<li><p>参与者</p></li>
+<li><p>审批者</p></li>
+<li><p>关注者</p></li>
+</ul>
 </section>
 </section>
 
@@ -400,11 +419,11 @@ Django</label><div class="sd-tab-content docutils">
       </div>
     </a>
     <a class="right-next"
-       href="user.html"
+       href="domain_events.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">事项成员</p>
+        <p class="prev-next-title">领域事件</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -426,7 +445,8 @@ Django</label><div class="sd-tab-content docutils">
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">类型选项</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">事项类型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">事项成员</a></li>
 </ul>
   </nav></div>
 

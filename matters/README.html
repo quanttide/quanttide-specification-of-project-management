@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'matters/README';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="事项类型" href="type.html" />
+    <link rel="next" title="领域模型" href="domain_models.html" />
     <link rel="prev" title="项目成员" href="../projects/user.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -146,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    简介
+                    引言
                 </a>
             </li>
         </ul>
@@ -161,8 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">事项</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="type.html">事项类型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user.html">事项成员</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domain_models.html">领域模型</a></li>
+<li class="toctree-l2"><a class="reference internal" href="domain_events.html">领域事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="endpoints.html">API实现</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
@@ -316,18 +317,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
 <h1>事项<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
-<p>事项子领域的核心模型是事项领域模型<code class="docutils literal notranslate"><span class="pre">Matter</span></code>。</p>
-<p>REST API如下：</p>
-<ul class="simple">
-<li><p>list: <code class="docutils literal notranslate"><span class="pre">/matters</span></code></p></li>
-<li><p>detail: <code class="docutils literal notranslate"><span class="pre">/matters/&lt;number&gt;</span></code></p></li>
-</ul>
-<p>包括字段如下，未说明字段为标准字段：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: 类型。选项见<a class="reference internal" href="type.html"><span class="doc std std-doc">事项类型</span></a></p></li>
-</ul>
+<p>本章定义事项子领域，主要领域模型为事项<code class="docutils literal notranslate"><span class="pre">Matter</span></code>。</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -373,11 +363,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="type.html"
+       href="domain_models.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">事项类型</p>
+        <p class="prev-next-title">领域模型</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
