@@ -158,9 +158,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="projects/user.html">项目成员</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="matters/README.html">事项</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="matters/domain_models.html">领域模型</a></li>
-<li class="toctree-l2"><a class="reference internal" href="matters/domain_events.html">领域事件</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="matters/README.html">事项子领域</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="matters/domain_models.html">事项<code class="docutils literal notranslate"><span class="pre">Matter</span></code></a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="matters/domain_events/README.html">领域事件</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="matters/domain_events/matter_created.html">事项已创建<code class="docutils literal notranslate"><span class="pre">MatterCreated</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="matters/domain_events/matter_updated.html">事项更新<code class="docutils literal notranslate"><span class="pre">MatterUpdated</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="matters/domain_events/matter_deleted.html">事项已删除<code class="docutils literal notranslate"><span class="pre">MatterDeleted</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="matters/endpoints.html">API实现</a></li>
 </ul>
 </li>
