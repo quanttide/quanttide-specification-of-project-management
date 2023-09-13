@@ -11,6 +11,7 @@ chapters:
       - file: projects/user.md
   - file: matters/README.md
     sections:
-      - file: matters/type.md
-      - file: matters/user.md
+      - file: matters/domain_models.md
+      - file: matters/domain_events.md
+      - file: matters/endpoints.md
   - file: CHANGELOG.md
