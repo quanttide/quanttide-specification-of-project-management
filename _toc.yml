@@ -12,6 +12,10 @@ chapters:
   - file: matters/README.md
     sections:
       - file: matters/domain_models.md
-      - file: matters/domain_events.md
+      - file: matters/domain_events/README.md
+        sections:
+          - file: matters/domain_events/matter_created.md
+          - file: matters/domain_events/matter_updated.md
+          - file: matters/domain_events/matter_deleted.md
       - file: matters/endpoints.md
   - file: CHANGELOG.md
