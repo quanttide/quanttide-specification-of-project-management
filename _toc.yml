@@ -11,7 +11,7 @@ chapters:
       - file: projects/user.md
   - file: matters/README.md
     sections:
-      - file: matters/domain_models.md
+      - file: matters/domain_models/README.md
       - file: matters/domain_events/README.md
         sections:
           - file: matters/domain_events/matter_created.md
