@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>事项Matter &#8212; 量潮项目管理标准</title>
+    <title>事项摘要MatterSummary &#8212; 量潮项目管理标准</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=927b94d3fcb96560df09" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -38,8 +38,9 @@
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=927b94d3fcb96560df09"></script>
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -61,11 +62,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'matters/domain_models';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'summaries/matter_summary';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="领域事件" href="domain_events/README.html" />
-    <link rel="prev" title="事项子领域" href="README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -76,6 +75,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -150,7 +158,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../projects/README.html">项目</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../projects/type.html">项目类型</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../projects/relation.html">项目关联关系</a></li>
@@ -160,15 +168,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../projects/user.html">项目成员</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="README.html">事项子领域</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">事项<code class="docutils literal notranslate"><span class="pre">Matter</span></code></a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="domain_events/README.html">领域事件</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="domain_events/matter_created.html">事项已创建<code class="docutils literal notranslate"><span class="pre">MatterCreated</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="domain_events/matter_updated.html">事项更新<code class="docutils literal notranslate"><span class="pre">MatterUpdated</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="domain_events/matter_deleted.html">事项已删除<code class="docutils literal notranslate"><span class="pre">MatterDeleted</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../matters/README.html">事项子领域</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../matters/domain_models/README.html">事项<code class="docutils literal notranslate"><span class="pre">Matter</span></code></a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../matters/domain_events/README.html">领域事件</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../matters/domain_events/matter_created.html">事项已创建<code class="docutils literal notranslate"><span class="pre">MatterCreated</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../matters/domain_events/matter_updated.html">事项更新<code class="docutils literal notranslate"><span class="pre">MatterUpdated</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../matters/domain_events/matter_deleted.html">事项已删除<code class="docutils literal notranslate"><span class="pre">MatterDeleted</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="endpoints.html">API实现</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../matters/endpoints.html">API实现</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
@@ -226,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/matters/domain_models.md" target="_blank"
+      <li><a href="../_sources/summaries/matter_summary.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -280,10 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -291,13 +299,11 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -308,21 +314,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>事项Matter</h1>
+    <h1>事项摘要MatterSummary</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">属性</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">事项类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">事项成员</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -332,58 +328,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="matter">
-<h1>事项<code class="docutils literal notranslate"><span class="pre">Matter</span></code><a class="headerlink" href="#matter" title="Permalink to this heading">#</a></h1>
-<section id="id1">
-<h2>属性<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>包括字段如下，未说明字段为标准字段：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">number</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">type</span></code>: 类型</p></li>
-</ul>
-</section>
-<section id="id2">
-<h2>事项类型<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">default</span></code>: 事项。该类型表示一般的事项或任务，通常是项目中最基本的单位，可以是某项工作、某个功能点或某个问题等。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">millstone</span></code>: 里程碑。该类型表示项目中的重要节点或阶段，通常与项目计划和时间表密切相关，用于标识项目的进展和里程碑。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">epic</span></code>: 史诗。该类型通常用于敏捷开发中，表示一个大型的、跨部门或跨团队的用户需求，可以包含多个用户故事。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">story</span></code>: 用户故事。该类型通常用于敏捷开发中，表示一个用户的需求或期望，通常以用户的角度来描述，用于指导开发人员的工作。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">task</span></code>: 任务。该类型表示具体的工作项或任务，通常是项目中最基本的单位，可以是某项工作、某个功能点或某个问题等。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">defect</span></code>: 缺陷。该类型表示产品或系统中的问题或缺陷，通常需要进行修复或调整，以提高产品或系统的质量和性能。</p></li>
-</ul>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-</input><label class="sd-tab-label" for="sd-tab-item-0">
-Django</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
-
-<span class="k">class</span> <span class="nc">MatterTypeChoices</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">TextChoices</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    事项类型选项</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-    <span class="n">default</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="s1">&#39;事项&#39;</span>
-    <span class="n">millstone</span> <span class="o">=</span> <span class="s1">&#39;millstone&#39;</span><span class="p">,</span> <span class="s1">&#39;里程碑&#39;</span>
-    <span class="n">epic</span> <span class="o">=</span> <span class="s1">&#39;epic&#39;</span><span class="p">,</span> <span class="s1">&#39;史诗&#39;</span>
-    <span class="n">story</span> <span class="o">=</span> <span class="s1">&#39;story&#39;</span><span class="p">,</span> <span class="s1">&#39;用户故事&#39;</span>
-    <span class="n">task</span> <span class="o">=</span> <span class="s1">&#39;task&#39;</span><span class="p">,</span> <span class="s1">&#39;任务&#39;</span>
-    <span class="n">defect</span> <span class="o">=</span> <span class="s1">&#39;defect&#39;</span><span class="p">,</span> <span class="s1">&#39;缺陷&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="id3">
-<h2>事项成员<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>负责人<code class="docutils literal notranslate"><span class="pre">Owner</span></code></p></li>
-<li><p>复核人<code class="docutils literal notranslate"><span class="pre">Reviewer</span></code></p></li>
-<li><p>参与者</p></li>
-<li><p>审批者</p></li>
-<li><p>关注者</p></li>
-</ul>
-</section>
+  <section class="tex2jax_ignore mathjax_ignore" id="mattersummary">
+<h1>事项摘要<code class="docutils literal notranslate"><span class="pre">MatterSummary</span></code><a class="headerlink" href="#mattersummary" title="Permalink to this heading">#</a></h1>
 </section>
 
     <script type="text/x-thebe-config">
@@ -399,7 +345,7 @@ Django</label><div class="sd-tab-content docutils">
         },
         kernelOptions: {
             name: "python3",
-            path: "./matters"
+            path: "./summaries"
         },
         predefinedOutput: true
     }
@@ -411,55 +357,17 @@ Django</label><div class="sd-tab-content docutils">
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="README.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">事项子领域</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="domain_events/README.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">领域事件</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">属性</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">事项类型</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">事项成员</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
@@ -503,8 +411,8 @@ By The Jupyter Book community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=927b94d3fcb96560df09"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=927b94d3fcb96560df09"></script>
 
   <footer class="bd-footer">
   </footer>
